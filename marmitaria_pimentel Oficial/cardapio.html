@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marmitaria Pimentel - Cardápio & Preços</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="main-header">
+<div class="logo-container">
+<svg viewBox="0 0 400 320" width="160" height="128" class="logo-svg">
+<path d="M210,50 C230,30 215,10 230,0 C220,15 235,30 220,50 Z" fill="#EAD292" />
+<path d="M235,45 C250,30 240,15 250,5 C242,18 252,30 242,45 Z" fill="#EAD292" opacity="0.8" />
+<ellipse cx="215" cy="53" rx="14" ry="7" fill="#EAD292" />
+<path d="M140,85 C200,60 270,60 300,85 L285,105 C240,88 180,88 150,105 Z" fill="#EAD292" />
+<path d="M140,115 L125,110 L130,128 L145,130 Z" fill="#EAD292" />
+<path d="M305,115 L320,110 L315,128 L300,130 Z" fill="#EAD292" />
+<path d="M145,120 C150,195 160,210 220,210 C280,210 290,195 295,120 Z" fill="#EAD292" />
+<text x="60" y="275" font-family="'Great Vibes', cursive" font-size="78" fill="#FCEBD0">Pimentel</text>
+<line x1="65" y1="298" x2="135" y2="298" stroke="#EAD292" stroke-width="2" />
+<text x="145" y="303" font-family="'Poppins', sans-serif" font-size="16" font-weight="600" fill="#EAD292" letter-spacing="4">MARMITARIA</text>
+<line x1="305" y1="298" x2="375" y2="298" stroke="#EAD292" stroke-width="2" />
+</svg>
+</div>
+
+<!-- NAVEGAÇÃO EM 3 ABAS -->
+
+<nav class="nav-tabs">
+<a class="tab-btn " href="index.html"><i class="fa-solid fa-house"></i> 1. Início & Cadastro</a>
+<a class="tab-btn active" href="cardapio.html"><i class="fa-solid fa-utensils"></i> 2. Cardápio & Preços</a>
+<a class="tab-btn " href="como-pedir.html"><i class="fa-solid fa-circle-info"></i> 3. Como Pedir & Feedbacks</a>
+</nav>
+</header>
+<main class="container">
+<h2 class="section-title">Nosso Cardápio Especial</h2>
+<p class="section-subtitle">Escolha as opções e monte sua refeição diária:</p>
+
+<div class="products-grid">
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500" alt="Marmita Tradicional">
+<div class="product-info">
+<h4>Marmita Tradicional</h4>
+<p>Arroz branco, feijão temperado, bife acebolado, batata frita crocante e salada.</p>
+<div class="product-bottom">
+<span class="price">R$ 22,00</span>
+<button class="btn-add" onclick="addToCart('Marmita Tradicional', 22.00)">
+<i class="fa-solid fa-plus"></i> Adicionar
+</button>
+</div>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500" alt="Marmita Fit Frango">
+<div class="product-info">
+<h4>Marmita Fit Frango</h4>
+<p>Arroz integral, peito de frango grelhado com ervas e legumes no vapor.</p>
+<div class="product-bottom">
+<span class="price">R$ 24,00</span>
+<button class="btn-add" onclick="addToCart('Marmita Fit Frango', 24.00)">
+<i class="fa-solid fa-plus"></i> Adicionar
+</button>
+</div>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500" alt="Feijoada Completa">
+<div class="product-info">
+<h4>Feijoada Completa</h4>
+<p>Feijoada tradicional com carnes nobres, arroz, couve, farofa e torresmo.</p>
+<div class="product-bottom">
+<span class="price">R$ 28,00</span>
+<button class="btn-add" onclick="addToCart('Feijoada Completa', 28.00)">
+<i class="fa-solid fa-plus"></i> Adicionar
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BOTÃO FLUTUANTE DO CARRINHO -->
+<button class="cart-floating-btn" onclick="toggleCart()" aria-label="Abrir carrinho">
+<i class="fa-solid fa-cart-shopping"></i>
+<span class="cart-count" id="cart-count">0</span>
+</button>
+<!-- MODAL DO CARRINHO -->
+<div class="cart-modal" id="cart-modal">
+<div class="cart-content">
+<div class="cart-header">
+<h3><i class="fa-solid fa-basket-shopping"></i> Seu Carrinho</h3>
+<button class="close-btn" onclick="toggleCart()" aria-label="Fechar">&times;</button>
+</div>
+<div id="cart-items"><p class="empty-cart-msg">Seu carrinho está vazio.</p></div>
+<div class="order-type-selector">
+<strong>Como deseja receber?</strong>
+<div class="radio-group">
+<label class="radio-label"><input type="radio" name="orderType" value="retirada" checked onchange="updateCartUI()"> Retirada na loja</label>
+<label class="radio-label"><input type="radio" name="orderType" value="entrega" onchange="updateCartUI()"> Entrega por motoboy (+ R$ 5,00)</label>
+</div>
+</div>
+<p class="cart-total-line"><strong>Total: <span id="cart-total">R$ 0,00</span></strong></p>
+<button class="btn-checkout" onclick="checkoutWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Finalizar pelo WhatsApp</button>
+</div>
+</div>
+<script src="atividade.js"></script>
+</body>
+</html>

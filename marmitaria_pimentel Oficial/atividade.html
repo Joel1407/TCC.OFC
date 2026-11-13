@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marmitaria Pimentel - Início & Cadastro</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="main-header">
+<div class="logo-container">
+<svg viewBox="0 0 400 320" width="160" height="128" class="logo-svg">
+<path d="M210,50 C230,30 215,10 230,0 C220,15 235,30 220,50 Z" fill="#EAD292" />
+<path d="M235,45 C250,30 240,15 250,5 C242,18 252,30 242,45 Z" fill="#EAD292" opacity="0.8" />
+<ellipse cx="215" cy="53" rx="14" ry="7" fill="#EAD292" />
+<path d="M140,85 C200,60 270,60 300,85 L285,105 C240,88 180,88 150,105 Z" fill="#EAD292" />
+<path d="M140,115 L125,110 L130,128 L145,130 Z" fill="#EAD292" />
+<path d="M305,115 L320,110 L315,128 L300,130 Z" fill="#EAD292" />
+<path d="M145,120 C150,195 160,210 220,210 C280,210 290,195 295,120 Z" fill="#EAD292" />
+<text x="60" y="275" font-family="'Great Vibes', cursive" font-size="78" fill="#FCEBD0">Pimentel</text>
+<line x1="65" y1="298" x2="135" y2="298" stroke="#EAD292" stroke-width="2" />
+<text x="145" y="303" font-family="'Poppins', sans-serif" font-size="16" font-weight="600" fill="#EAD292" letter-spacing="4">MARMITARIA</text>
+<line x1="305" y1="298" x2="375" y2="298" stroke="#EAD292" stroke-width="2" />
+</svg>
+</div>
+
+<!-- NAVEGAÇÃO EM 3 ABAS -->
+
+<nav class="nav-tabs">
+<a class="tab-btn active" href="index.html"><i class="fa-solid fa-house"></i> 1. Início & Cadastro</a>
+<a class="tab-btn " href="cardapio.html"><i class="fa-solid fa-utensils"></i> 2. Cardápio & Preços</a>
+<a class="tab-btn " href="como-pedir.html"><i class="fa-solid fa-circle-info"></i> 3. Como Pedir & Feedbacks</a>
+</nav>
+</header>
+<main class="container">
+<div class="welcome-banner">
+<h2>Bem-vindo à Marmitaria Pimentel</h2>
+<p>Sabor caseiro inigualável, refeições nutritivas e entrega rápida para o seu dia a dia!</p>
+</div>
+
+<div class="info-cards-grid">
+<div class="info-card">
+<div class="card-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+<h3>Compras On-line</h3>
+<p>Faça seu pedido diretamente em nosso site com total praticidade.</p>
+<div class="badge-info"><i class="fa-regular fa-clock"></i> Pedidos das 08:00 às 14:00</div>
+</div>
+
+<div class="info-card">
+<div class="card-icon"><i class="fa-solid fa-store"></i></div>
+<h3>Retirada na Loja Física</h3>
+<p>Faça seu pedido online e retire em nosso balcão sem enfrentar filas.</p>
+<div class="badge-info"><i class="fa-solid fa-location-dot"></i> Rua das Marmitas, 123 - Centro</div>
+</div>
+
+<div class="info-card">
+<div class="card-icon"><i class="fa-solid fa-motorcycle"></i></div>
+<h3>Entregas Imediatas</h3>
+<p>Motoboy rápido para sua marmita chegar quentinha no horário de almoço.</p>
+<div class="badge-info"><i class="fa-solid fa-calendar-days"></i> Segunda a Sábado</div>
+</div>
+</div>
+
+<div class="form-container">
+<div class="form-header">
+<h3><i class="fa-solid fa-user-plus"></i> Cadastro do Cliente</h3>
+<p>Preencha os dados abaixo para agilizar o envio dos seus pedidos:</p>
+</div>
+<form id="client-form" onsubmit="saveClientData(event)">
+<div class="input-group">
+<label for="client-name">Nome Completo:</label>
+<input type="text" id="client-name" placeholder="Ex: Maria Oliveira" required>
+</div>
+<div class="input-group">
+<label for="client-phone">Telefone / WhatsApp:</label>
+<input type="tel" id="client-phone" placeholder="Ex: (11) 99999-8888" required>
+</div>
+<div class="input-group">
+<label for="client-address">Endereço Completo de Entrega:</label>
+<input type="text" id="client-address" placeholder="Rua, Número, Bairro e Ponto de Referência" required>
+</div>
+<button type="submit" class="btn-primary">
+<i class="fa-solid fa-floppy-disk"></i> Salvar Dados e Abrir Cardápio
+</button>
+</form>
+</div>
+</main>
+
+<script src="atividade.js"></script>
+</body>
+</html>

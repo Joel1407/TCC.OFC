@@ -1,0 +1,20 @@
+MARMITARIA PIMENTEL - VERSÃO CORRIGIDA COM PÁGINAS SEPARADAS
+
+Conteúdo recuperado do HTML original:
+- Início: boas-vindas, cards informativos e formulário de cadastro.
+- Cardápio: os três produtos originais, descrições, imagens, preços e botões Adicionar.
+- Como Pedir: quatro etapas originais e as três avaliações originais.
+
+Arquivos:
+index.html, cardapio.html, como-pedir.html, atividade.html (compatibilidade),
+style.css e atividade.js.
+
+Como abrir:
+1. Extraia o ZIP inteiro mantendo todos os arquivos na mesma pasta.
+2. Abra index.html.
+3. Use o menu superior para navegar pelas páginas.
+
+Cadastro e carrinho são compartilhados entre páginas pelo localStorage.
+O HTML original recebido estava truncado no começo do modal do carrinho; o modal foi reconstruído
+para que os controles previstos no JavaScript original funcionem.
+Antes de publicar, substitua em atividade.js o telefone fictício 5511999999999 pelo WhatsApp real.
